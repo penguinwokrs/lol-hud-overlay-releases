@@ -1,0 +1,77 @@
+{
+  "teams": [
+    { "tag": "BLUE", "seed": "LCK #1", "color": "#2f8ef4", "wins": 1 },
+    { "tag": "RED", "seed": "LPL #4", "color": "#e8414f", "wins": 0 }
+  ],
+  "ultHud": {
+    "_note": "ゲーム標準の観戦 HUD 左右の顔アイコン右上にあるウルト表示の中心（画面座標）。1920x1080・HUD 拡大率既定で実測。画面サイズや HUD 拡大率を変えたら測り直す",
+    "xs": [72, 1847],
+    "ys": [163, 266, 369, 472, 575],
+    "radii": [5, 7],
+    "iconScale": 3.2
+  },
+  "seriesLength": 3,
+  "splashSeconds": 8,
+  "pollMs": 500,
+  "placeholders": {
+    "_note": "ゴールド系は API で取れないため仮の固定値（docs/hud-parts.md §3.1）",
+    "teamGold": [62400, 51100],
+    "laneDiff": [{ "value": 2800, "side": 0 }, { "value": 5200, "side": 0 }, { "value": 132, "side": 0 }, { "value": 1200, "side": 0 }, { "value": 2000, "side": 0 }]
+  },
+  "topHud": {
+    "_note": "ゲーム標準の HUD 上部の撃破数を読む範囲（画面座標、[青, 赤]）。1920x1080・HUD 拡大率既定で実測。数字は web/digits.json の見本と形を比べて読む",
+    "y": 8,
+    "w": 35,
+    "h": 27,
+    "dragons": [515, 1404],
+    "grubs": [660, 1248],
+    "barons": [590, 1326],
+    "everyMs": 2000
+  },
+  "data": {
+    "_note": "このファイル（と digits.json）はアプリとは別に更新できる（配布用リポジトリの data/。署名つき）。version: データの版（上げたら data-v<version> のタグで公開）、minApp: このデータを読めるアプリの最低の版",
+    "version": 2,
+    "minApp": "0.1.1"
+  },
+  "roleQuest": {
+    "_note": "ロールクエスト（2026 S2）。quest: 達成前に出すクエストのアイテム、達成の判定と報酬: TOP は rewardSpell を持ったら、JUNGLE は rewardSpellPrefix で始まるスマイト、MIDDLE は bootsDepth 段階目の靴、BOTTOM は reward を出す、UTILITY は rewardItem（とその強化後）",
+    "TOP": { "quest": 1200, "rewardSpell": "S12_SummonerTeleportUpgrade" },
+    "JUNGLE": { "quest": 1204, "rewardSpellPrefix": "SummonerSmiteAvatar" },
+    "MIDDLE": { "quest": 1201, "bootsDepth": 3 },
+    "BOTTOM": { "quest": 1202, "reward": 1207 },
+    "UTILITY": { "quest": 1203, "rewardItem": 3867 }
+  },
+  "drakeIcons": {
+    "_note": "ゲーム標準の上部 HUD の下に並ぶ、倒したドラゴンの属性アイコン（画面座標、1920x1080・HUD 拡大率既定で実測）。倒した順に、青は中央から左へ、赤は右へ並ぶ。x0: 1 枠目の左端 [青, 赤]、step: 次の枠までの差。refs: アイコンの明るい画素の平均色（RGB）と画素数（同じ属性なら毎回同じ画素で描かれる。実測）。インファーナル・オーシャン・ケミテックは見本がまだ無く未登録（読めない間は告知から決めた属性を使う）",
+    "x0": [855, 1059],
+    "step": [-20, 20],
+    "y": 63,
+    "w": 17,
+    "h": 20,
+    "refs": { "mountain": [185, 148, 117, 99], "cloud": [158, 208, 224, 112], "hextech": [103, 172, 191, 70] }
+  },
+  "textHud": {
+    "_note": "ドラゴンの属性を読む範囲（画面座標 x, y, w, h）。chat: チャット欄、announce: 画面中央の告知。日本語クライアント・1920x1080 で実測",
+    "chat": [60, 470, 600, 210],
+    "announce": [680, 200, 580, 80]
+  },
+  "objectives": {
+    "_note": "ドラゴンの出現（秒）。初回・再出現・エルダーの再出現・魂に必要な数。今のパッチの値かは未確認（issue #4）",
+    "first": 300,
+    "respawn": 300,
+    "elderRespawn": 360,
+    "soul": 4,
+    "elderBuff": 150,
+    "baron": { "_note": "初出現・再出現・バフの長さ（秒）。上部の同じアイコンは初出現まではリフトヘラルドの数", "first": 1200, "respawn": 360, "buff": 180 }
+  },
+  "scoreboardHud": {
+    "_note": "ゲーム標準のスコアボード（画面下）で、各チームのシャットダウン金額・KDA・CS の列を読む範囲（画面座標）。1920x1080・HUD 拡大率既定で実測",
+    "xs": [795, 1020],
+    "y": 853,
+    "w": 115,
+    "h": 223,
+    "rowH": 44,
+    "everyMs": 2000,
+    "cs": { "_note": "CS の数字（黄色）の範囲。行ごとに rowH ずつ下へ。読む頻度は topHud.everyMs", "xs": [880, 1022], "y": 860, "w": 38, "h": 22 }
+  }
+}
