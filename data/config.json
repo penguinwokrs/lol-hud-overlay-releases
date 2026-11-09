@@ -18,37 +18,68 @@
     "teamGold": [62400, 51100],
     "laneDiff": [{ "value": 2800, "side": 0 }, { "value": 5200, "side": 0 }, { "value": 132, "side": 0 }, { "value": 1200, "side": 0 }, { "value": 2000, "side": 0 }]
   },
+  "questHud": {
+    "_note": "ゲーム標準の観戦 HUD 左右のパネルで、BOT の行（上から 4 人目）のロールクエストのアイコンの範囲（画面座標 [青, 赤] の x、y、一辺）。達成後は報酬の枠の靴が出るので、靴のアイコン（CommunityDragon）と比べて、移った後に強化した靴を読む。maxDiff: これより似ていなければ読めないとする（平均の差 0〜255）。1920x1080・HUD 拡大率既定で実測（issue #7）",
+    "xs": [5, 1893],
+    "y": 511,
+    "size": 19,
+    "maxDiff": 25
+  },
   "topHud": {
-    "_note": "ゲーム標準の HUD 上部の撃破数を読む範囲（画面座標、[青, 赤]）。1920x1080・HUD 拡大率既定で実測。数字は web/digits.json の見本と形を比べて読む",
+    "_note": "ゲーム標準の HUD 上部の撃破数・タワーの数を読む範囲（画面座標、[青, 赤]）。1920x1080・HUD 拡大率既定で実測。数字は web/digits.json の見本と形を比べて読む",
     "y": 8,
     "w": 35,
     "h": 27,
     "dragons": [515, 1404],
     "grubs": [660, 1248],
     "barons": [590, 1326],
+    "towers": [739, 1182],
+    "gold": { "_note": "チームのゴールド（例「56.2k」）の範囲。左詰めで、ゴールドのアイコンの右（issue #35）", "xs": [802, 1106], "y": 14, "w": 60, "h": 24 },
     "everyMs": 2000
   },
   "data": {
     "_note": "このファイル（と digits.json）はアプリとは別に更新できる（配布用リポジトリの data/。署名つき）。version: データの版（上げたら data-v<version> のタグで公開）、minApp: このデータを読めるアプリの最低の版",
-    "version": 2,
-    "minApp": "0.1.1"
+    "version": 3,
+    "minApp": "0.1.2"
   },
   "roleQuest": {
-    "_note": "ロールクエスト（2026 S2）。quest: 達成前に出すクエストのアイテム、達成の判定と報酬: TOP は rewardSpell を持ったら、JUNGLE は rewardSpellPrefix で始まるスマイト、MIDDLE は bootsDepth 段階目の靴、BOTTOM は reward を出す、UTILITY は rewardItem（とその強化後）",
+    "_note": "ロールクエスト（2026 S2）。quest: 達成前に出すクエストのアイテム、達成の判定と報酬: TOP は rewardSpell を持ったら、JUNGLE は rewardSpellPrefix で始まるスマイト、MIDDLE は bootsDepth 段階目の靴、BOTTOM は 7 番目の枠に移った靴を出す、UTILITY は rewardItem（とその強化後）",
     "TOP": { "quest": 1200, "rewardSpell": "S12_SummonerTeleportUpgrade" },
     "JUNGLE": { "quest": 1204, "rewardSpellPrefix": "SummonerSmiteAvatar" },
     "MIDDLE": { "quest": 1201, "bootsDepth": 3 },
-    "BOTTOM": { "quest": 1202, "reward": 1207 },
+    "BOTTOM": { "quest": 1202 },
     "UTILITY": { "quest": 1203, "rewardItem": 3867 }
   },
+  "spellIcons": {
+    "_note": "サモナースペルの名前（API の rawDisplayName の中の名前）→ 画像のファイル名（CommunityDragon の game/data/spells/icons2d/）。CommunityDragon のスペルのデータには名前が無いので表で引く。表に無い強化版は名前の頭が一致する元のスペルの画像。試合中に強化されるスペル: スマイトは 通常 → アンリーシュド → ペット別プライマル（スコーチクロウ・ガストウォーカー・モスストンパー）、テレポートは真テレポート",
+    "SummonerBarrier": "summonerbarrier.png",
+    "SummonerBoost": "summoner_boost.png",
+    "SummonerDot": "summonerignite.png",
+    "SummonerExhaust": "summoner_exhaust.png",
+    "SummonerFlash": "summoner_flash.png",
+    "SummonerHaste": "summoner_haste.png",
+    "SummonerHeal": "summoner_heal.png",
+    "SummonerMana": "summonermana.png",
+    "SummonerSmite": "summoner_smite.png",
+    "SummonerSnowball": "summoner_mark.png",
+    "SummonerTeleport": "summoner_teleport_new.png",
+    "S5_SummonerSmitePlayerGanker": "avatarsmite_firstupgrade.png",
+    "SummonerSmiteAvatarOffensive": "1101_smite.png",
+    "SummonerSmiteAvatarUtility": "1102_smite.png",
+    "SummonerSmiteAvatarDefensive": "1103_smite.png",
+    "S12_SummonerTeleportUpgrade": "unleashed_teleport_new.png"
+  },
   "drakeIcons": {
-    "_note": "ゲーム標準の上部 HUD の下に並ぶ、倒したドラゴンの属性アイコン（画面座標、1920x1080・HUD 拡大率既定で実測）。倒した順に、青は中央から左へ、赤は右へ並ぶ。x0: 1 枠目の左端 [青, 赤]、step: 次の枠までの差。refs: アイコンの明るい画素の平均色（RGB）と画素数（同じ属性なら毎回同じ画素で描かれる。実測）。インファーナル・オーシャン・ケミテックは見本がまだ無く未登録（読めない間は告知から決めた属性を使う）",
+    "_note": "ゲーム標準の上部 HUD の下に並ぶ、倒したドラゴンの属性アイコン（画面座標、1920x1080・HUD 拡大率既定で実測）。倒した順に、青は中央から左へ、赤は右へ並ぶ。x0: 1 枠目の左端 [青, 赤]、step: 次の枠までの差。refs: アイコンの明るい画素の平均色（RGB）と画素数（同じ属性なら毎回同じ画素で描かれる）。マウンテン・クラウド・ヘクステック・オーシャンは実測（オーシャンは 2026-11-09、推定値 [140,207,194] は実測と 80 ずれていた）。インファーナル・ケミテックは実画面の見本が無く、CommunityDragon の同じアイコン（game/assets/ux/scoreboard/_<属性>drake.png）を画面の大きさに縮めて測った推定の色（実測の 3 属性に合わせて明るさを 1.07 倍。画素数は推定が合わないので付けない）。実画面で未確認（issue #17）",
     "x0": [855, 1059],
     "step": [-20, 20],
     "y": 63,
     "w": 17,
     "h": 20,
-    "refs": { "mountain": [185, 148, 117, 99], "cloud": [158, 208, 224, 112], "hextech": [103, 172, 191, 70] }
+    "refs": { "mountain": [185, 148, 117, 99], "cloud": [158, 208, 224, 112], "hextech": [103, 172, 191, 70], "infernal": [221, 109, 45], "ocean": [78, 177, 154, 109], "chemtech": [147, 198, 73] },
+    "templatesNote": "形の見本（issue #17）: 実画面の同じ枠（17x20、BGRA、base64）。見本の明るい画素だけを ±1px ずらして比べ、平均の差が maxDiff 以下なら読む。後ろの地形が明るくても読める。見本の無い属性（インファーナル・ケミテック）は refs の平均色で読む。マウンテン・クラウド・ヘクステックは 34:00 の青 / 赤の枠、オーシャンは JP1-611647742 の 31:20 の赤の枠（2026-11-09、16.22）",
+    "maxDiff": 20,
+    "templates": {"mountain": "GzMb/xszG/8bMxv/GzMb/xszG/8bNB3/GzUe/xs1Hv8TJhb/DBcN/xAdEf8ZKhj/HjEc/x4wG/8eMBv/HzAb/x8xHP8cNR3/HDUd/xw2Hf8cNh3/HDYd/xw3Hv8cNx//DBgO/ykrNP9SX2j/R1lj/yMpMf8RHRD/HjMd/x4yHf8fMh3/HzMe/xw2H/8dNh//HTYf/x82IP8eNiD/HDch/w4dEv8uNEL/jKbG/4ymxv+Uqs7/lKrO/xAUGP8WKB3/Gjch/xo3If8cNyH/HjYf/x82H/8fNiD/HTYg/x02IP8YLxz/LjRC/4ymxv+Mpsb/jKbG/5Sqzv+Uqs7/aHuR/xAUGP8WMB3/Gzgj/x05I/8fNiD/HzYg/x42IP8cNyD/GC8b/xcwHP8uNEL/jKbG/4ymxv+Mpsb/lKrO/5Sqzv9oe5H/EBQY/xkxHv8ZMR//Hjkj/xw3If8cNyH/HDch/xMnGP8QEBD/EycY/woUDP9dcoT/jKbG/4ymxv+Uqs7/lKrO/zxDVf8WJh3/BQUF/xAQEP8VKBn/Gjci/xcwHf8ABAD/KTI//1Jofv8ABAD/FSIT/zE3RP+Enr3/hJ69/4Sevf+Enr3/LDQ//xYrGf8ICAD/VWx+/y42P/8aNyL/DRwQ/1Jofv97lr3/e5a9/ykyP/8cLBb/CAgI/4Sevf+Enr3/hJ69/1hufv8ABAD/EyUV/y42P/97mr3/e5q9/xs3IP8GCAL/e5a9/3uWvf97lr3/Umh+/xMcD/8QFw7/Wm+B/4Sevf+Enr3/WG5+/w0ZDv8KFQr/VWx+/3uavf97mr3/HTcd/wcIAv97lr3/e5a9/3uWvf97lr3/CAgI/xcnFP8xN0T/hJ69/4Sevf8sND//FSoW/wAEAP97mr3/e5q9/3uavf8eNxr/BgcB/3CRuP9wkbj/cJG4/3CRuP8pMT//FyYT/wgICP9riq3/Y32c/wAAAP8OHQ//QlZo/2uSvf9rkr3/a5K9/x43Gf8GBwH/cJG4/3CRuP9wkbj/cJG4/0phdv8ICAj/DhcN/0phdv9CVmj/CxcM/wAAAP9jfZz/a5K9/2uSvf9rkr3/IDcX/wYHAf9wkbj/cJG4/3CRuP9wkbj/a4qt/wgICP8YKxX/KTE//yEnNP8VKRT/ISc0/2N9nP9rkr3/a5K9/2uSvf8gNxf/EBsL/zlRa/9wkbj/cJG4/3CRuP9riq3/KTE//xcmEv8ICAj/AAAA/w0XCv9CVmj/Y32c/2uSvf9rkr3/a5K9/yA3F/8bLhP/AAQA/yEtPP9jhrX/Y4a1/1qCrf88WXP/AAAA/x40Fv8eMxb/CAgI/0Rfdv9jhq3/WoKl/1qCpf8eKTf/IDUW/yA2F/8gNhf/DhoK/yEtPP9jhrX/WoKt/1qCrf8eKTn/Gi0T/xgnEv8mLz//Y4at/2OGrf9agqX/Hik3/xIfD/8gPB3/IEIm/yA+If8gOhv/DhoK/yEtPP9agq3/WoKt/zxZc/8RHgz/CAgI/0Rfdv9jhq3/Y4at/x4pN/8SHw//IDca/yA6Hf8gPyf/ID8n/yI8H/8lNxf/EBoK/x4pOf9agq3/PFlz/wAAAP8ICAj/RF92/2OGrf8mLz//Eh8N/yA3F/8gNxf/IjIU/yU3F/8lNxf/JTcX/yU3F/8lNxf/EBgK/yEpMf8QExj/Hi8U/xgnEf8YHSb/GB0m/xIfDf8gNxf/IDcX/yA3F/8iNBT/JzQR/yU2Ff8lNxf/JTcX/yU3F/8lNxf/GycR/yAvFP8lNxf/JDcX/x0vFP8YJxH/ITcX/yA3F/8gNxf/IDcX/w==", "cloud": "Gioo/xorI/8aKiL/GSsi/xksIv8RGxb/ChEN/xQhG/8XJh7/Ficf/xUmHv8VJh3/Fykg/x09K/8dOyj/HTgn/xw4J/8bKyn/EBIU/xkrI/8ZKyP/BQYC/11WQv+MfWP/Lich/w4VEv8XKCD/CwgF/xAbFv8VJBv/GCog/x0+K/8dOij/HTko/xsqJ/8QERT/GSoj/xkrI/8VJB7/IRgQ///zxv+1ron/IRgQ/xEcFf8IBAD/Ukk8/wgEAP8WKhv/Fykf/x07Kf8dOyj/GSgf/xARFP8YKSL/GSoi/xgpIf8hGBD/ta6J///zxv+1ron/CAQA/xAZEv9SSTz/nJp5/wAEAP8VLB3/HT0q/x07KP8ZJx//EBEU/xgpIv8YKSL/GCoi/yEYEP+1ron///PG///zxv9SSTz/ERsV/1JJPP/n37X/qqiE/wAEAP8dPSn/Hjso/xknH/8dKCb/GCki/xgpIv8XKCH/IRgQ/7Wuif//88b///PG/5yaef8OEQz/Ukk8/+fftf//88b/VU9C/xAkGP8ePCj/Hzwo/xwmJf8YKSL/GCki/xUlHv8xMCH/9+e1//fntf/357X/p6F7/w0TEP9YTkL/9+e1//fjtf/347X/AAQA/xw6J/8iPyj/IDwo/x45J/8YKSL/DhgU/3NpUv/357X/9+e1//fntf+noXv/DhUS/1hOQv/357X/9+O1//fjtf9SSjz/FCwd/yJAKP8gPSf/Hjon/xUpHP83MCb/ta6E//fntf/357X/9+e1/wgICP8ICAj/p6F7//fntf/347X/9+O1/1JKPP8UKx3/IT4n/x88J/8WKhz/AAAA/6Wac//357X/9+e1//fntf8xMCH/EyAY/1hOQv/357X/9+e1//fjtf/347X/Uko8/xMrHf8gPSf/Gy4d/xgcEP+tonP/99+l/+fXpf+fmXD/EBAI/xckF/85MCH/9+Ot//fjrf/3463//+et///nrf8IDAj/Gzko/xIhFf8YHBD/99+l//ffpf/336X/WE48/xUhFf8QEAj/WE48//fjrf/3463/9+Ot//fjrf//563/WlE//wgMCP8cNyb/BgkE/62ic//336X/99+l/xgcEP8XJhr/EBAI/5+ZcP/n16X/9+Ot//fjrf/3463/9+Ot/1pRP/8SHxb/WlE//xQlGv8FBQD/99+l//ffpf9jWUL/Gy0e/xAQCP/n16X/59el/5+ZcP95aE//eWhP/3loT/85MCH/FSQa/wgMCP+tonb/DRYP/wUFAP/n05z/59Oc/wgIAP8ICAD/j4Va/4+FWv8QEAj/T0Ux/wgICP8RHxb/FSYa/xYpG/8ICAD/raFu///npf8ICAD/BQUA/+fTnP/n05z/CAgA/wgIAP8QEAj/FiIX/09FMf/OuoT/79uc/6KZa/9VSjn/VUo5/62hbv//56X//+el/wkKAv8JDwn/59Oc/+fTnP8ICAD/GzEl/xsvIv8QEAj/zrqE/866hP/v25z/79uc/+/bnP/v25z//+el///npf+toW7/DBAI/w8bEv9SSDT/59Oc/1JINP8XJhr/EBAI/09FMf9PRTH/EBAI/wgICP9VSjn/oplr/+/bnP//56X//+el/1pON/8VJRb/Gi4f/wsUDf88Myb/eW9N/xAdFf8dNCb/Figd/xcoHf8bLyL/GTMh/w8fFP8MGRH/Pzcm/72qe/+9qnv/AAQA/xoyIP8ZLR//GS0f/xUkGv8QHBT/HTMl/x0zJf8eNCX/HjQl/x40Jf8dOif/Gzck/xw5Jv8TKBv/CRML/wgUC/8RIxb/Hjsm/w==", "hextech": "Gjcm/xcoG/8XKBv/FjIj/xowH/8WJhn/FyMY/xoqHf8aKBz/Ii4e/yQwH/8XKRv/Fyoc/xcqHf8YKx7/GCse/xcqHP8bOij/Fygc/xgzJP8ZMyP/Fyka/xcoGv8bLB//Gyse/ycyIP+Ef0n/REot/xgrHf8YLB3/GCwd/xktHv8aLR7/GCwd/xs6Kf8WKBz/GDQk/xkyIf8XKRv/Figa/xYpG/8iLh7/hX1J/8ezaP82Qyr/GCwd/xktHv8ZLR7/Gi4f/xouIP8ZLR7/Gzkp/xYpHP8ZMyP/GzEg/xYoG/8WKBz/Gykc/3h3SP/UvnH/28Vy/3V1Rf8bLR3/GS0e/xkuHv8aLx//GjAg/xkuH/8bOSj/FzEj/xkyI/8aMCD/Fikc/xgoG/9nZj7/yrVu/6CXWv+imVn/wbFm/2BgOf8bLBz/GS4e/xovH/8bMCD/GS4f/xs5KP8ZMSL/GDIi/xYoG/8YJxr/WVk1/7+rZf+FfUz/LT4p/y9AKv+SilP/x7Rq/1hZNv8aLB3/Gi4g/xsvIf8bLyD/HDgn/xkxIv8aMCH/FyYa/05QMP+9qWP/tKFg/z5JL/8dNyb/HTcn/0lTNf/JtWv/w61o/0pOMP8ZLR7/GzAh/xovIP8aMCH/GjEi/xowHv9LTS7/taVi/8y2bP+4pGH/VFg3/x00Jf8dMyH/aWQ8/7KjYP/Ls23/taFj/z9FK/8aLh//Gi8f/xoxIf8ZLR3/QEQp/7qpZP+pm13/Rkcr/15bNv+bjFP/V1o3/19iPP+bkFX/TlAx/0xNMf+3oWT/rJpf/zQ+J/8ZLB7/IjIh/z1EKf+4p2H/zLds/0pLLv8XKRv/Gyka/2FeOP+un1//sqJi/1ZbOP8dNSL/Giwd/2dlP//Yv3P/pZhb/y85JP8wOyX/Z2Q6/+/Te//QuGz/TU0u/xgnGv8WKBv/HCgZ/1dZN/9UVzj/HTUk/xs5Jv8ZKxz/amg//9jDc//nz3v/TE8v/xstHv8qNCH/mIlR/+vQef+3pGD/P0Io/xcmG/8WJxr/HDMk/xszJP8aNib/HDQk/0pMMP+8q2f/2sV1/4J6Sf8hLh7/GjAg/xs3JP8rMh//ppZX/+/Te/+0ol//NTok/xcmGP8cLB7/Gzgn/xs1Jf9ETDL/vqxo/97Id/+FfUv/IS4e/xgtHf8cNiT/HDgl/x04I/8xNiL/rZxb/+bMeP+klFj/LTIg/xwrHf8cKh7/Oj8p/7elZv/iyHj/kIZR/yUxH/8YLB3/GC0d/xw2JP8cOCT/HDgk/xcnGf8yOiP/pJZa/+LLef+Pg0//KjEg/zQ6Jf+klVr/4st5/56PV/8qMyH/GCwc/xgtHf8YLR3/HTYk/xw3JP8cNyT/Fyga/xcnGP82OyT/sKBg/9rEdf+snl7/vKxm/+PMev+tn1//KCYW/xgrHP8ZLB3/GCwd/xgrHf8dNiT/HDcj/xw3I/8cOCX/Fyga/xYmGf9AQyn/u6tm/+TMef/kzXr/uall/zMwHP8MEQf/GSwd/xksHf8ZLB3/GCoc/xw2JP8cNyP/HDcj/xw3JP8XKBr/Fyga/xclGf9PTzD/zrtu/8GtZ/8+OyP/DRIL/wwSCv8ZLB3/GSsd/xkrHP8YKhz/HDYk/xs1Iv8cNiP/HDYj/xcnGv8XJxr/Fyca/yIsG/+Dekj/RkEn/w0SC/8MEgv/DBIK/xksHf8ZKx3/GSsc/xgrHP8cNST/GzIh/xszIf8bNCL/FyYa/xcnGv8XJxr/GSQY/yQrHP8OEwz/DBIL/wwSC/8MEgr/GCwd/xkrHf8ZKxz/GCsc/w==", "ocean": "LSIm/y4iJf8uIiX/LiIl/y0hI/8sICP/KyAj/ysfI/8rHyP/Kh4h/yIYG/8oHB7/Kx0e/ywfHv8tHx7/LB4d/yYaIP8vJCf/LyQn/zAkJ/8wJCf/LyIl/y0hJP8tIST/LSEk/yYcH/8WDxD/EAwI/woHB/8RDAr/GxIS/yodHP8tHh//KBsi/zAkJ/8wJCf/MCQn/y8kJ/8uIyb/LiMm/y8jJv8kHhz/EBQI/3OGSv97jU//e41P/3uNT/9KTiz/CAgA/yIXGP8oGyL/MCUp/zAlKP8wJSj/MCUo/ygfIf8vJCf/Ih0Y/xAUCP9zhkr/pbpr/63Dc/+tw3P/rcNz/63Dc/92hUf/CAgA/xkSE/8wKCv/MCcq/zAmKf8jGx3/AAAA/yMbHf8QFAj/pbpr/6W6a/+lumv/rcNz/3uNT/97jU//rcNz/62+a/+tvmv/P0Ej/zEpK/8xJyr/KiEi/wAAAP9zhkr/JioY/3OGSv+lumv/pbpr/0JIKf8YGAj/GBgI/3uNT/+tw3P/rb5r/62+a/92hUf/MSkp/zEnKP8QEAj/bn8//5yyWv9ufz//nLJa/5yyWv80OB7/FhAR/x0WFP85PR7/nLJa/5yyWv+tw2P/rcNj/63DY/8yKSn/KyMk/xAQCP+cslr/nLJa/5yyWv+cslr/aHo8/xYQEv8eFhj/JRsc/wgIAP85PR7/nLJa/63DY/+tw2P/rcNj/zMrK/8hGhv/P0Mj/5yyWv+cslr/nLJa/5yyWv80OB7/NDge/zQ4Hv85PR7/FRAN/x4WF/8ICAD/dohC/63DY/+tw2P/Myss/x4XGf8/QyP/nLJa/5yyWv+cslr/nLJa/2h6PP+cslr/nLJa/5yyWv9rfTz/CAgA/x8WF/8/QyH/rcNj/3aIQv8zKyz/IBkb/zxAG/+UqkL/lKpC/5SqQv+ctkr/nLZK/5y2Sv+ctkr/lLJC/5SyQv9jeiz/AAAA/wgEAP+UrkL/ZXks/zMrLP8oICH/EBAI/5SqQv+UqkL/lKpC/5qzRP+as0T/mrNE/5qzRP+UskL/lLJC/5SyQv8xOBb/FAwL/2V5LP+UrkL/Myss/y8mKP8QEAj/aHou/5SqQv+UqkL/l7E//5exP/+XsT//l7E//5SyQv+UskL/lLJC/zE4Fv8YDw//ZXks/5SuQv8zKiv/Micq/ywiI/8QEAj/lKpC/5SqQv+Urjn/lK45/5SuOf+Urjn/lLJC/5SyQv+UskL/MTgW/xUODf9leSz/lK5C/zIpKv8xKCn/MSUp/xUQEv9ETxj/iawx/5SqMf+UqjH/lKox/5SqMf+MpjH/jKYx/4ymMf8IDAD/CAQA/3uOKf9VYxv/MSgp/zEnKf8xJSn/MSUp/xUQEv9ETxj/lKox/5SqMf+UqjH/lKox/4ymMf+MpjH/NDwQ/wgMAP8uLw3/VWMb/xUOD/8xKCr/MScq/zEmKf8xJSn/MSUp/xUQEf8xNRD/Y3Uh/2N1If9jdSH/YHYh/zQ8EP8ZFRH/CAwA/y4vDf8IBAD/IRYc/zEoKv8xJyr/MSYq/zEmKv8xJSn/MSQo/yUaHf8AAAD/MTUQ/zE1EP8IDAD/CAwA/y8gKP8IDAD/CAQA/yscH/8iFh//MSgq/zEnKv8xJir/MSYq/zElKf8xJCj/MSMn/yodIf8FBQD/BQUA/yscIf8wHyf/MSAp/ywdI/8oGyD/IxYf/yAVH/8yKCr/Micq/zImKv8yJir/MiYq/zEkKP8xIyf/MSIl/zEhJf8oGx7/Lx8k/y8fJP8xHyP/Lh4g/yocIf8iFyD/HxQe/w=="}
   },
   "textHud": {
     "_note": "ドラゴンの属性を読む範囲（画面座標 x, y, w, h）。chat: チャット欄、announce: 画面中央の告知。日本語クライアント・1920x1080 で実測",
