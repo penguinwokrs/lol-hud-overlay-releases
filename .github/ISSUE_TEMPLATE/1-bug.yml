@@ -1,0 +1,74 @@
+name: Bug report
+description: Something looks wrong, doesn't work, or crashes
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is **public**. Hide summoner names etc. in screenshots if needed.
+        You don't need to post the data folder path (it contains your Windows user name).
+        Showing nothing while you are playing yourself is by design (spectator only).
+        Any language is fine.
+  - type: checkboxes
+    attributes:
+      label: Before submitting
+      options:
+        - label: It happens on the latest version (Settings → アプリ情報 (About) → 更新を確認 (Check for updates). If updating fails, say so below)
+          required: true
+        - label: The spectator window is in borderless mode (for display problems)
+        - label: There is no existing report of this ([search issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue))
+          required: true
+  - type: input
+    attributes:
+      label: App version
+      description: Settings (Shift+O or the tray icon) → アプリ情報 (About) → アプリの版
+      placeholder: 0.1.6
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Data version / patch of the game
+      description: Also shown in アプリ情報 (データの版 / 見ている試合のパッチ)
+      placeholder: 4 / 16.22
+  - type: dropdown
+    attributes:
+      label: What you were watching
+      options:
+        - Replay
+        - Live spectate
+        - App start / update / settings window
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What happened
+      description: Which part, what it showed, and what it should have shown
+      placeholder: e.g. Red team's dragon count is one too high. The game's own HUD shows 2, the overlay shows 3
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: When / how it happens
+      description: Game time, what you did just before (seek, rewind, pause), whether Shift+R fixes it
+      placeholder: e.g. Around 18:30, after rewinding to 15:00
+  - type: dropdown
+    attributes:
+      label: How often
+      options:
+        - Every time
+        - Sometimes
+        - Only once
+  - type: input
+    attributes:
+      label: Game ID
+      description: For replays, if you know it (match history or the replay file name). Lets us check the same game
+      placeholder: JP1-611758181
+  - type: input
+    attributes:
+      label: Screen
+      description: For display problems. Game resolution, Windows scaling, number of monitors, game language
+      placeholder: 1920x1080 / 100% / 1 monitor / Japanese
+  - type: textarea
+    attributes:
+      label: Screenshots / video
+      description: Ideally showing both the overlay and the game's own HUD. Drag and drop to attach
