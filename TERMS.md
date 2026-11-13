@@ -14,7 +14,7 @@ LoL HUD Overlay（以下「本ソフト」）をダウンロード・インス�
 
     HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
 
-使っていただいた大会・配信を [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) で教えていただけると助かります（任意）。
+使っていただいた大会・配信を、[Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) か、作者の X（[@koma_1o1](https://x.com/koma_1o1)）への DM で教えていただけると助かります（任意）。どちらか送りやすい方でかまいません。大会名・日程・配信や大会ページの URL があると嬉しいです。
 
 ## 3. 禁止すること
 - 本ソフト（インストーラ・exe・同梱データ）を、配布ページ（https://github.com/penguinwokrs/lol-hud-overlay-releases）以外で再配布すること
@@ -72,7 +72,7 @@ If you use the Software in a tournament or broadcast that generates revenue (ent
 
     HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
 
-We'd love to hear where the Software was used. Let us know in [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) (optional).
+We'd love to hear where the Software was used. Let us know in [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) or by DM to the author on X ([@koma_1o1](https://x.com/koma_1o1)), whichever you prefer (optional). The tournament name, date, and broadcast or tournament page URL are helpful.
 
 ## 3. What you may not do
 - Redistribute the Software (installer, executable, or bundled data) anywhere other than the official download page (https://github.com/penguinwokrs/lol-hud-overlay-releases)
