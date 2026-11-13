@@ -39,6 +39,17 @@ body:
         - App start / update / settings window
     validations:
       required: true
+  - type: dropdown
+    attributes:
+      label: Output mode you checked
+      description: Settings → 表示先 (Output). For display problems, checking both modes helps narrow it down
+      options:
+        - Overlay mode only
+        - OBS mode only
+        - Both overlay and OBS mode
+        - Not a display problem (app start / update / settings window)
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: What happened
@@ -65,9 +76,11 @@ body:
       placeholder: JP1-611758181
   - type: input
     attributes:
-      label: Screen
-      description: For display problems. Game resolution, Windows scaling, number of monitors, game language
-      placeholder: 1920x1080 / 100% / 1 monitor / Japanese
+      label: In-game resolution
+      description: The resolution set in the game's video settings while spectating. Write "-" if it's not a display problem
+      placeholder: 1920x1080
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Screenshots / video
