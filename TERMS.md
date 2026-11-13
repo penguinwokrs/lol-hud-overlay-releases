@@ -10,7 +10,7 @@ LoL HUD Overlay（以下「本ソフト」）をダウンロード・インス�
 - 本ソフトは League of Legends の観戦（リプレイを含む）専用です。自分がプレイ中の試合では何も表示しません
 
 ## 2. クレジット表記
-参加費・賞金・有料配信・スポンサーなどで収益のある大会・配信で本ソフトを使う場合は、配信の概要欄・大会のページ・エンドクレジットのいずれかに、次の表記を入れてください。収益のない場合も、入れていただけると開発の励みになります。
+参加費・賞金・有料配信・スポンサーなどで収益のある大会・配信で本ソフトを使う場合は、配信の概要欄・大会のページ・エンドクレジットのいずれかに、次の表記を入れてください。配信・動画・大会のページのどれも無い大会（参加者だけで行う大会など）では、表記を省略していただいてかまいません。収益のない場合も、入れていただけると開発の励みになります。
 
     HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
 
@@ -68,7 +68,7 @@ By downloading, installing, or using LoL HUD Overlay ("the Software"), you agree
 - The Software is for spectating League of Legends (including replays) only. It shows nothing while you are playing a match yourself
 
 ## 2. Credit
-If you use the Software in a tournament or broadcast that generates revenue (entry fees, prize pools, paid broadcasts, sponsorships, etc.), please include the following credit in the stream description, the tournament page, or the end credits. For non-revenue use, a credit is appreciated but not required.
+If you use the Software in a tournament or broadcast that generates revenue (entry fees, prize pools, paid broadcasts, sponsorships, etc.), please include the following credit in the stream description, the tournament page, or the end credits. If your tournament has no broadcast, video, or tournament page (for example, one held among participants only), you're welcome to leave the credit out. For non-revenue use, a credit is appreciated but not required.
 
     HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
 
