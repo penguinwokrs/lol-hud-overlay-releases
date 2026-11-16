@@ -1,6 +1,10 @@
 # LoL HUD Overlay（配布用）
 
-League of Legends の観戦（リプレイ含む）画面に、放送風の HUD を重ねる Windows アプリの配布場所です。ソースコードはここにはありません。
+League of Legends の観戦（リプレイ含む）画面に、放送風の HUD を重ねる、無料の Windows アプリの配布場所です。ソースコードはここにはありません。
+
+紹介・使い方・よくある質問: https://lolhud.penguinwokrs.app/hud/
+
+LoL HUD Overlay is a free Windows app that, when you spectate a League of Legends custom game (replays included), overlays the state of all 10 players, team gold, and objective timers as a broadcast-style HUD. Website: https://lolhud.penguinwokrs.app/en/hud/
 
 > **アルファ版**です。機能や見た目は今後変わります。各版の内容は [Releases](https://github.com/penguinwokrs/lol-hud-overlay-releases/releases) のノートを見てください。
 
