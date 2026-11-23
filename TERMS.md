@@ -27,10 +27,10 @@ LoL HUD Overlay（以下「本ソフト」）をダウンロード・インス�
 - 本ソフトや作者が Riot Games の公認を受けているかのように示さないでください
 
 ## 5. 本ソフトがすること（データの扱い）
-- **読むもの**: ゲーム本体の Live Client Data API（PC 内の `127.0.0.1:2999`）と観戦画面の表示。画面の文字・数字の読み取りは PC 内で行い、画像を外部へ送ることはありません
+- **読むもの**: ゲーム本体の Live Client Data API（PC 内の `127.0.0.1:2999`）、LoL クライアントの LCU（PC 内のローカルの API）、観戦画面の表示。LCU からは、ゲームのデータ（`/lol-game-data/assets/` の下にあるアイテム・価格・チャンピオン・スキンのデータと画像）だけを読みます。LCU の接続先とパスワードはクライアントの `lockfile` から読み、パスワードは LCU への接続にだけ使います（保存・外部への送信はしません）。画面の文字・数字の読み取りは PC 内で行い、画像を外部へ送ることはありません
 - **書き換えるもの**: ゲームの設定ファイル `PersistedSettings.json` のうち、観戦用の項目だけを書き換えます。通常プレイの設定は変えません。書き換える前のファイルは `%LOCALAPPDATA%\com.penguinwokrs.lolhudoverlay\settings-backup\` に残します
 - **保存するもの**: 設定・画像のキャッシュ・試合の記録を `%LOCALAPPDATA%\com.penguinwokrs.lolhudoverlay\` に保存します
-- **通信先**: 更新と表示用データの確認（GitHub）、ゲームの画像・データの取得（CommunityDragon）だけです。利用状況の収集・送信はしません。アカウント情報も扱いません
+- **通信先**: 更新と表示用データの確認（GitHub）、ゲームの画像・データの取得（Riot Games の Data Dragon。Data Dragon に無い一部の画像だけ CommunityDragon）だけです。利用状況の収集・送信はしません。アカウント情報も扱いません
 
 ## 6. 保証しないこと
 - 本ソフトはアルファ版で、現状のまま提供します。表示の正確さ、動作、ゲームの今後のパッチへの対応は保証しません
@@ -53,7 +53,7 @@ LoL HUD Overlay was created under Riot Games' "Legal Jibber Jabber" policy using
 ## 10. 問い合わせ
 不具合の報告や質問は [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues) へお寄せください。
 
-最終更新: 2026-11-13
+最終更新: 2026-11-23
 
 ---
 
@@ -85,10 +85,10 @@ We'd love to hear where the Software was used. Let us know in [Issues](https://g
 - Do not present the Software, or its author, as endorsed by Riot Games
 
 ## 5. What the Software does with data
-- **Reads**: the game's Live Client Data API (`127.0.0.1:2999` on your PC) and the spectator screen. Text and numbers are read on your PC, and no images are sent anywhere
+- **Reads**: the game's Live Client Data API (`127.0.0.1:2999` on your PC), the League client's LCU (a local API on your PC), and the spectator screen. From the LCU, it reads only game data (item, price, champion, and skin data and images under `/lol-game-data/assets/`). It finds the LCU's address and password in the client's `lockfile`, and uses the password only to connect to the LCU (it is not stored or sent anywhere else). Text and numbers are read on your PC, and no images are sent anywhere
 - **Modifies**: only the spectator-related entries in the game's `PersistedSettings.json`. Your normal gameplay settings are not changed. A backup of the original file is kept in `%LOCALAPPDATA%\com.penguinwokrs.lolhudoverlay\settings-backup\`
 - **Stores**: settings, an image cache, and match records in `%LOCALAPPDATA%\com.penguinwokrs.lolhudoverlay\`
-- **Connects to**: GitHub (to check for updates and display data) and CommunityDragon (to download game images and data). It does not collect or send usage data, and it does not handle account information
+- **Connects to**: GitHub (to check for updates and display data) and Riot Games' Data Dragon (to download game images and data; CommunityDragon only for a few images that Data Dragon doesn't have). It does not collect or send usage data, and it does not handle account information
 
 ## 6. No warranty
 - The Software is alpha software, provided "as is". There is no guarantee that what it displays is accurate, that it works, or that it will keep working with future game patches
@@ -109,4 +109,4 @@ These terms may change without notice. If you use the Software after a change, y
 ## 10. Contact
 Please report bugs or ask questions in [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues).
 
-Last updated: 2026-11-13
+Last updated: 2026-11-23
