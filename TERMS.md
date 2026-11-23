@@ -12,7 +12,9 @@ LoL HUD Overlay（以下「本ソフト」）をダウンロード・インス�
 ## 2. クレジット表記
 参加費・賞金・有料配信・スポンサーなどで収益のある大会・配信で本ソフトを使う場合は、配信の概要欄・大会のページ・エンドクレジットのいずれかに、次の表記を入れてください。配信・動画・大会のページのどれも無い大会（参加者だけで行う大会など）では、表記を省略していただいてかまいません。収益のない場合も、入れていただけると開発の励みになります。
 
-    HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
+    LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
+
+HUD だけ・ドラフト（BAN/PICK の画面）だけ・両方のどれで使う場合も、この 1 行です。今までにお伝えした表記（「HUD: LoL HUD Overlay — …」や、Draft Stage の「Draft: Draft Stage — …」を含む）も、そのまま使っていただいてかまいません。
 
 使っていただいた大会・配信を、[Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) か、作者の X（[@koma_1o1](https://x.com/koma_1o1)）への DM で教えていただけると助かります（任意）。どちらか送りやすい方でかまいません。大会名・日程・配信や大会ページの URL があると嬉しいです。
 
@@ -70,7 +72,9 @@ By downloading, installing, or using LoL HUD Overlay ("the Software"), you agree
 ## 2. Credit
 If you use the Software in a tournament or broadcast that generates revenue (entry fees, prize pools, paid broadcasts, sponsorships, etc.), please include the following credit in the stream description, the tournament page, or the end credits. If your tournament has no broadcast, video, or tournament page (for example, one held among participants only), you're welcome to leave the credit out. For non-revenue use, a credit is appreciated but not required.
 
-    HUD: LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
+    LoL HUD Overlay — https://github.com/penguinwokrs/lol-hud-overlay-releases
+
+Use this one line whether you use only the HUD, only the draft (ban/pick screen), or both. Credits we gave you earlier (including "HUD: LoL HUD Overlay — …" and Draft Stage's "Draft: Draft Stage — …") remain valid as they are.
 
 We'd love to hear where the Software was used. Let us know in [Issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues/new?template=4-usage.yml) or by DM to the author on X ([@koma_1o1](https://x.com/koma_1o1)), whichever you prefer (optional). The tournament name, date, and broadcast or tournament page URL are helpful.
 
