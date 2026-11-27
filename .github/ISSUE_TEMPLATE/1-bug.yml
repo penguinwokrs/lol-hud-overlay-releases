@@ -1,5 +1,5 @@
-name: Bug report
-description: Something looks wrong, doesn't work, or crashes
+name: Bug report / 不具合の報告
+description: Something looks wrong, doesn't work, or crashes / 表示がおかしい・動かない・落ちる
 labels: [bug]
 body:
   - type: markdown
@@ -9,79 +9,85 @@ body:
         You don't need to post the data folder path (it contains your Windows user name).
         Showing nothing while you are playing yourself is by design (spectator only).
         Any language is fine.
+
+        この Issue は**公開**されます。必要ならスクリーンショットのサモナー名などを隠してください。
+        データのフォルダーの場所（Windows のユーザー名が入ります）は書かなくて大丈夫です。
+        自分がプレイ中の試合で何も出ないのは仕様です（観戦専用）。
+        何語でも大丈夫です。
   - type: checkboxes
     attributes:
-      label: Before submitting
+      label: Before submitting / 送る前に
       options:
-        - label: It happens on the latest version (Settings → アプリ情報 (About) → 更新を確認 (Check for updates). If updating fails, say so below)
+        - label: It happens on the latest version (Settings → アプリ情報 (About) → 更新を確認 (Check for updates). If updating fails, say so below) / 最新の版で起きる（設定 → アプリ情報 → 更新を確認。更新できないときは、下にそう書いてください）
           required: true
-        - label: The spectator window is in borderless mode (for display problems)
-        - label: There is no existing report of this ([search issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue))
+        - label: The spectator window is in borderless mode (for display problems) / 観戦画面はボーダーレスにしている（表示の問題のとき）
+        - label: There is no existing report of this ([search issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue)) / 同じ報告がまだ無い（[Issue を検索](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue)）
           required: true
   - type: input
     attributes:
-      label: App version
-      description: Settings (Shift+O or the tray icon) → アプリ情報 (About) → アプリの版
+      label: App version / アプリの版
+      description: Settings (Shift+O or the tray icon) → アプリ情報 (About) → アプリの版 / 設定（Shift+O かトレイのアイコン）→ アプリ情報 → アプリの版
       placeholder: 0.1.6
     validations:
       required: true
   - type: input
     attributes:
-      label: Data version / patch of the game
-      description: Also shown in アプリ情報 (データの版 / 見ている試合のパッチ)
+      label: Data version and game patch / データの版・試合のパッチ
+      description: Also shown in アプリ情報 (データの版・見ている試合のパッチ) / これもアプリ情報に出ます（データの版・見ている試合のパッチ）
       placeholder: 4 / 16.22
   - type: dropdown
     attributes:
-      label: What you were watching
+      label: What you were watching / 見ていたもの
       options:
-        - Replay
-        - Live spectate
-        - App start / update / settings window
+        - Replay / リプレイ
+        - Live spectate / ライブの観戦
+        - Draft (champion select) / ドラフト（チャンピオン選択）
+        - App start, update or settings window / 起動・更新・設定画面
     validations:
       required: true
   - type: dropdown
     attributes:
-      label: Output mode you checked
-      description: Settings → 表示先 (Output). For display problems, checking both modes helps narrow it down
+      label: Output mode you checked / 確かめた表示先
+      description: Settings → 試合 (Match) → 表示先と URL (Output). The HUD and the draft share it. For display problems, checking both modes helps narrow it down / 設定 → 試合 → 表示先と URL（HUD とドラフトで共通）。表示の問題は、両方のモードで確かめると原因を絞り込みやすくなります
       options:
-        - Overlay mode only
-        - OBS mode only
-        - Both overlay and OBS mode
-        - Not a display problem (app start / update / settings window)
+        - Overlay mode only / オーバーレイのモードだけ
+        - OBS mode only / OBS のモードだけ
+        - Both overlay and OBS mode / オーバーレイと OBS の両方
+        - Not a display problem (app start, update or settings window) / 表示の問題ではない（起動・更新・設定画面）
     validations:
       required: true
   - type: textarea
     attributes:
-      label: What happened
-      description: Which part, what it showed, and what it should have shown
-      placeholder: e.g. Red team's dragon count is one too high. The game's own HUD shows 2, the overlay shows 3
+      label: What happened / 起きたこと
+      description: Which part, what it showed, and what it should have shown / どの部分に、何が出たか。本当は何が出るはずだったか
+      placeholder: e.g. Red team's dragon count is one too high. The game's own HUD shows 2, the overlay shows 3 / 例：赤チームのドラゴンの数が 1 多い。ゲームの HUD は 2、オーバーレイは 3
     validations:
       required: true
   - type: textarea
     attributes:
-      label: When / how it happens
-      description: Game time, what you did just before (seek, rewind, pause), whether Shift+R fixes it
-      placeholder: e.g. Around 18:30, after rewinding to 15:00
+      label: When and how it happens / いつ・どうすると起きるか
+      description: Game time, what you did just before (seek, rewind, pause), whether Shift+R fixes it / 試合の時間、直前にしたこと（シーク・巻き戻し・一時停止）、Shift+R で直るか
+      placeholder: e.g. Around 18:30, after rewinding to 15:00 / 例：15:00 に巻き戻したあと、18:30 ごろ
   - type: dropdown
     attributes:
-      label: How often
+      label: How often / 起きる頻度
       options:
-        - Every time
-        - Sometimes
-        - Only once
+        - Every time / 毎回
+        - Sometimes / ときどき
+        - Only once / 一度だけ
   - type: input
     attributes:
-      label: Game ID
-      description: For replays, if you know it (match history or the replay file name). Lets us check the same game
+      label: Game ID / 試合の ID
+      description: For replays, if you know it (match history or the replay file name). Lets us check the same game / リプレイなら、分かれば（戦績かリプレイのファイル名）。同じ試合で確かめられます
       placeholder: JP1-611758181
   - type: input
     attributes:
-      label: In-game resolution
-      description: The resolution set in the game's video settings while spectating. Write "-" if it's not a display problem
+      label: In-game resolution / ゲームの解像度
+      description: The resolution set in the game's video settings while spectating. Write "-" if it's not a display problem or it's about the draft / 観戦中のゲームのビデオ設定の解像度。表示の問題でないときや、ドラフトのときは「-」と書いてください
       placeholder: 1920x1080
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Screenshots / video
-      description: Ideally showing both the overlay and the game's own HUD. Drag and drop to attach
+      label: Screenshots or video / スクリーンショット・動画
+      description: Ideally showing both the overlay and the game's own HUD. Drag and drop to attach / オーバーレイとゲームの HUD の両方が映っていると助かります。ドラッグ＆ドロップで添付できます

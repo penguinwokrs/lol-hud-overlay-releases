@@ -1,10 +1,17 @@
-name: Usage report / 使用報告
-description: Tell us about a stream or tournament that used LoL HUD Overlay (optional, thank you!)
+name: Used in a stream or tournament / 配信・大会で使った報告
+description: Tell us about a stream or tournament that used LoL HUD Overlay. Optional, and no permission is needed / LoL HUD Overlay を使った配信・大会を教えてください（任意。許諾は要りません）
 labels: [usage]
 body:
   - type: markdown
     attributes:
-      value: Any language is fine. This will be public. / 何語でも大丈夫です。内容は公開されます。
+      value: |
+        Thank you for using LoL HUD Overlay! This report is optional. You don't need permission to use it in streams or tournaments (including ones with entry fees or prize pools).
+        For questions about permission or the conditions (credit etc.), see the [Terms of use](https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md#english).
+        This will be public. Any language is fine.
+
+        使っていただき、ありがとうございます。この報告は任意です。配信・大会（参加費・賞金のある大会を含む）で使うのに、許諾は要りません。
+        許諾や条件（クレジット表記など）についてのご相談は、[利用条件](https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md)をご覧ください。
+        内容は公開されます。何語でも大丈夫です。
   - type: input
     attributes:
       label: Event or channel name / 大会・配信の名前
@@ -13,11 +20,11 @@ body:
   - type: input
     attributes:
       label: Link / リンク
-      description: Stream, VOD or tournament page
+      description: Stream, VOD or tournament page / 配信・アーカイブ・大会のページ
   - type: input
     attributes:
       label: Date / 日付
   - type: textarea
     attributes:
       label: Comments / ひとこと
-      description: Anything that worked well or was hard to use
+      description: Anything that worked well or was hard to use / 良かったところ・使いにくかったところ

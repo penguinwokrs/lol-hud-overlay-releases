@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Release notes
+  - name: Release notes / リリースノート
     url: https://github.com/penguinwokrs/lol-hud-overlay-releases/releases
-    about: What changed or was fixed in each version
+    about: What changed or was fixed in each version / 版ごとに変わったこと・直ったこと
   - name: Terms of use / 利用条件
     url: https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md
     about: Do I need permission? Credit, redistribution, paid tournaments / 許諾・クレジット表記・有料の大会について

@@ -1,16 +1,21 @@
-name: Question
-description: Usage, installation, anything else
+name: Question / 質問
+description: Usage, installation, anything else / 使い方・インストール・そのほか
 labels: [question]
 body:
   - type: markdown
     attributes:
-      value: Any language is fine.
+      value: |
+        This issue is **public**. Any language is fine.
+        For permission, credit, redistribution, or paid tournaments, see the [Terms of use](https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md#english) first.
+
+        この Issue は**公開**されます。何語でも大丈夫です。
+        許諾・クレジット表記・再配布・有料の大会については、先に[利用条件](https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md)をご覧ください。
   - type: textarea
     attributes:
-      label: Question
+      label: Question / 質問
     validations:
       required: true
   - type: input
     attributes:
-      label: App version
-      description: If you know it (Settings → アプリ情報 (About))
+      label: App version / アプリの版
+      description: If you know it (Settings → アプリ情報 (About)) / 分かれば（設定 → アプリ情報）
