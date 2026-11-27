@@ -15,6 +15,7 @@ body:
         自分がプレイ中の試合で何も出ないのは仕様です（観戦専用）。
         何語でも大丈夫です。
   - type: checkboxes
+    id: checks
     attributes:
       label: Before submitting / 送る前に
       options:
@@ -24,6 +25,7 @@ body:
         - label: There is no existing report of this ([search issues](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue)) / 同じ報告がまだ無い（[Issue を検索](https://github.com/penguinwokrs/lol-hud-overlay-releases/issues?q=is%3Aissue)）
           required: true
   - type: input
+    id: version
     attributes:
       label: App version / アプリの版
       description: Settings (Shift+O or the tray icon) → アプリ情報 (About) → アプリの版 / 設定（Shift+O かトレイのアイコン）→ アプリ情報 → アプリの版
@@ -31,11 +33,13 @@ body:
     validations:
       required: true
   - type: input
+    id: data-version
     attributes:
       label: Data version and game patch / データの版・試合のパッチ
       description: Also shown in アプリ情報 (データの版・見ている試合のパッチ) / これもアプリ情報に出ます（データの版・見ている試合のパッチ）
       placeholder: 4 / 16.22
   - type: dropdown
+    id: watching
     attributes:
       label: What you were watching / 見ていたもの
       options:
@@ -46,6 +50,7 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: output
     attributes:
       label: Output mode you checked / 確かめた表示先
       description: Settings → 試合 (Match) → 表示先と URL (Output). The HUD and the draft share it. For display problems, checking both modes helps narrow it down / 設定 → 試合 → 表示先と URL（HUD とドラフトで共通）。表示の問題は、両方のモードで確かめると原因を絞り込みやすくなります
@@ -57,6 +62,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: what-happened
     attributes:
       label: What happened / 起きたこと
       description: Which part, what it showed, and what it should have shown / どの部分に、何が出たか。本当は何が出るはずだったか
@@ -64,11 +70,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: repro
     attributes:
       label: When and how it happens / いつ・どうすると起きるか
       description: Game time, what you did just before (seek, rewind, pause), whether Shift+R fixes it / 試合の時間、直前にしたこと（シーク・巻き戻し・一時停止）、Shift+R で直るか
       placeholder: e.g. Around 18:30, after rewinding to 15:00 / 例：15:00 に巻き戻したあと、18:30 ごろ
   - type: dropdown
+    id: frequency
     attributes:
       label: How often / 起きる頻度
       options:
@@ -76,11 +84,13 @@ body:
         - Sometimes / ときどき
         - Only once / 一度だけ
   - type: input
+    id: game-id
     attributes:
       label: Game ID / 試合の ID
       description: For replays, if you know it (match history or the replay file name). Lets us check the same game / リプレイなら、分かれば（戦績かリプレイのファイル名）。同じ試合で確かめられます
       placeholder: JP1-611758181
   - type: input
+    id: resolution
     attributes:
       label: In-game resolution / ゲームの解像度
       description: The resolution set in the game's video settings while spectating. Write "-" if it's not a display problem or it's about the draft / 観戦中のゲームのビデオ設定の解像度。表示の問題でないときや、ドラフトのときは「-」と書いてください
@@ -88,6 +98,7 @@ body:
     validations:
       required: true
   - type: textarea
+    id: screenshots
     attributes:
       label: Screenshots or video / スクリーンショット・動画
       description: Ideally showing both the overlay and the game's own HUD. Drag and drop to attach / オーバーレイとゲームの HUD の両方が映っていると助かります。ドラッグ＆ドロップで添付できます
