@@ -9,6 +9,7 @@ body:
 
         この Issue は**公開**されます。何語でも大丈夫です。
   - type: dropdown
+    id: area
     attributes:
       label: Area / 対象
       options:
@@ -19,17 +20,25 @@ body:
         - Other / その他
     validations:
       required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version / アプリの版
+      description: If you know it (Settings → アプリ情報 (About)) / 分かれば（設定 → アプリ情報）
   - type: textarea
+    id: problem
     attributes:
       label: Problem or what you want to do / 困っていること・したいこと
       description: Before the idea itself, tell us why you want it (e.g. what you want to show on stream) / 案の前に、なぜ欲しいかを教えてください（例：配信で何を見せたいか）
     validations:
       required: true
   - type: textarea
+    id: idea
     attributes:
       label: Idea / 案
       description: How it should look or work. Leave empty if you're not sure / どう見えて、どう動くとよいか。分からなければ空のままで大丈夫です
   - type: textarea
+    id: references
     attributes:
       label: References / 参考
       description: Screenshots of tournament broadcasts, sketches, etc. / 大会の配信のスクリーンショット、手描きの図など

@@ -13,18 +13,22 @@ body:
         許諾や条件（クレジット表記など）についてのご相談は、[利用条件](https://github.com/penguinwokrs/lol-hud-overlay-releases/blob/main/TERMS.md)をご覧ください。
         内容は公開されます。何語でも大丈夫です。
   - type: input
+    id: event
     attributes:
       label: Event or channel name / 大会・配信の名前
     validations:
       required: true
   - type: input
+    id: link
     attributes:
       label: Link / リンク
       description: Stream, VOD or tournament page / 配信・アーカイブ・大会のページ
   - type: input
+    id: date
     attributes:
       label: Date / 日付
   - type: textarea
+    id: comments
     attributes:
       label: Comments / ひとこと
       description: Anything that worked well or was hard to use / 良かったところ・使いにくかったところ
