@@ -1,31 +1,35 @@
-name: Feature request
-description: Something you'd like changed or added
+name: Feature request / 要望
+description: Something you'd like changed or added / 変えてほしいこと・足してほしいこと
 labels: [enhancement]
 body:
   - type: markdown
     attributes:
-      value: Any language is fine.
+      value: |
+        This issue is **public**. Any language is fine.
+
+        この Issue は**公開**されます。何語でも大丈夫です。
   - type: dropdown
     attributes:
-      label: Area
+      label: Area / 対象
       options:
-        - HUD display (score, items, objectives, ...)
-        - Effects (kills, objectives, ...)
-        - Settings window / shortcuts
-        - Other
+        - HUD display (score, items, objectives, ...) / HUD の表示（スコア・アイテム・オブジェクトなど）
+        - Effects (kills, objectives, ...) / 演出（キル・オブジェクトなど）
+        - Draft (champion select) / ドラフト（チャンピオン選択）
+        - Settings window, shortcuts / 設定画面・ショートカット
+        - Other / その他
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Problem / what you want to do
-      description: Before the idea itself, tell us why you want it (e.g. what you want to show on stream)
+      label: Problem or what you want to do / 困っていること・したいこと
+      description: Before the idea itself, tell us why you want it (e.g. what you want to show on stream) / 案の前に、なぜ欲しいかを教えてください（例：配信で何を見せたいか）
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Idea
-      description: How it should look or work. Leave empty if you're not sure
+      label: Idea / 案
+      description: How it should look or work. Leave empty if you're not sure / どう見えて、どう動くとよいか。分からなければ空のままで大丈夫です
   - type: textarea
     attributes:
-      label: References
-      description: Screenshots of tournament broadcasts, sketches, etc.
+      label: References / 参考
+      description: Screenshots of tournament broadcasts, sketches, etc. / 大会の配信のスクリーンショット、手描きの図など
